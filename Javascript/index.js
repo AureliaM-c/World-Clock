@@ -18,6 +18,20 @@ function updateTime() {
   sydneyTimeElement.innerHTML = sydneyTime.format(
     "h:mm:ss [<small>]A[</small>]"
   );
+  //Tokyo Time
+  let tokyoElement = document.querySelector("#tokyo");
+  let tokyoDateElement = tokyoElement.querySelector(".date");
+  let tokyoTimeElement = tokyoElement.querySelector(".time");
+  let tokyoTime = moment().tz("Asia/Tokyo");
+  tokyoDateElement.innerHTML = tokyoTime.format("MMMM Do YYYY");
+  tokyoTimeElement.innerHTML = tokyoTime.format("h:mm:ss [<small>]A[</small>]");
+  //Accra Time
+  let accraElement = document.querySelector("#accra");
+  let accraDateElement = accraElement.querySelector(".date");
+  let accraTimeElement = accraElement.querySelector(".time");
+  let accraTime = moment().tz("Africa/Accra");
+  accraDateElement.innerHTML = accraTime.format("MMMM Do YYYY");
+  accraTimeElement.innerHTML = accraTime.format("h:mm:ss [<small>]A[</small>]");
 }
 
 function updateCity(event) {
